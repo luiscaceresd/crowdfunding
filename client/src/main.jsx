@@ -7,9 +7,8 @@ import { StateContextProvider } from './context';
 import App from './App';
 import './index.css';
 
-const clientID = process.env.REACT_APP_THIRDWEB_CLIENT_ID;
+const clientID = `${process.env.REACT_APP_THIRDWEB_CLIENT_ID}`;
 const root = ReactDOM.createRoot(document.getElementById('root'));
-console.log("clientID", clientID)
 
 root.render(
   <ThirdwebProvider clientId={clientID} activeChain={ChainId.Goerli}>
