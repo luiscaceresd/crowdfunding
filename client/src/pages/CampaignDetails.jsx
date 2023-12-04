@@ -16,11 +16,15 @@ const CampaignDetails = () => {
 
   const remainingDays = daysLeft(state.deadline)
 
+  const handleDonate = async () => {
+
+  }
+
   return (
     <div>
       {isLoading & "Loading..."}
 
-      <div className="w-full flex md:flex-row flex-column mt-10 gap-[30px]">
+      <div className="w-full flex md:flex-row flex-col mt-10 gap-[30px]">
         <div className="flex-1 flex-col">
           <img
             src={state.image}
@@ -40,6 +44,7 @@ const CampaignDetails = () => {
             ></div>
           </div>
         </div>
+
         <div className="flex md:w-[150px] w-full flex-wrap justify-between gap-[30px]">
           <CountBox title="Days Left" value={remainingDays} />
           <CountBox
@@ -49,6 +54,7 @@ const CampaignDetails = () => {
           <CountBox title="Total Backers" value={donators.length} />
         </div>
       </div>
+
       <div className="mt-[60px] flex lg:flex-row flex-column gap-5">
         <div className="flex-[2] flex flex-col gap-[40px]">
           <div>
@@ -99,8 +105,9 @@ const CampaignDetails = () => {
               )}
             </div>
           </div>
+        </div>
 
-          <div className="flex-1">
+        <div className="flex-1">
             <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">
               Fund
             </h4>
@@ -117,15 +124,19 @@ const CampaignDetails = () => {
                     value={amount} 
                     onChange={(e) => setAmount(e.target.value)} 
                   />
-                  <div className="mt-[20px] p-4 bg-[#13131a] rounded-[10px]">
+                  <div className="my-[20px] p-4 bg-[#13131a] rounded-[10px]">
                     <h4 className="font-epilogue font-semibold text-[14px] leading-[22px] text-white">Back it because you believe in it.</h4>
                     <p className="mt-[20px] font-epilogue font-normal leading-[22px] text-[#808191]">Support the project for no reward, just because it speaks to you</p>
                   </div>
+
+                  <CustomButton
+                    title="Fund Campaign"
+                    styles="w-full bg-[#8c6dfd]"
+                    handleClick={handleDonate}
+                  />
                 </div>
             </div>
           </div>
-
-        </div>
       </div>
     </div>
   )
