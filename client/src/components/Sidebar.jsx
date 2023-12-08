@@ -36,7 +36,7 @@ const Sidebar = () => {
               {...link}
               isActive={isActive}
               handleClick={() => {
-                if(!link.disabled){
+                if(!link.disabled){ 
                   setIsActive(link.name)
                   navigate(link.link)
                 }
